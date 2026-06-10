@@ -1,0 +1,28 @@
+(
+echo # Environment variables
+echo .env
+echo .env.local
+echo .env.*.local
+echo .env.production
+echo.
+echo # Frontend
+echo frontend/node_modules/
+echo frontend/dist/
+echo frontend/build/
+echo.
+echo # Backend
+echo backend/__pycache__/
+echo backend/.Python
+echo backend/venv/
+echo backend/env/
+echo backend/*.egg-info/
+echo.
+echo # IDE
+echo .vscode/
+echo .idea/
+echo *.swp
+echo.
+echo # OS
+echo .DS_Store
+echo Thumbs.db
+) > .gitignore
