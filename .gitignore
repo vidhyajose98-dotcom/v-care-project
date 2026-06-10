@@ -1,28 +1,36 @@
-(
-echo # Environment variables
-echo .env
-echo .env.local
-echo .env.*.local
-echo .env.production
-echo.
-echo # Frontend
-echo frontend/node_modules/
-echo frontend/dist/
-echo frontend/build/
-echo.
-echo # Backend
-echo backend/__pycache__/
-echo backend/.Python
-echo backend/venv/
-echo backend/env/
-echo backend/*.egg-info/
-echo.
-echo # IDE
-echo .vscode/
-echo .idea/
-echo *.swp
-echo.
-echo # OS
-echo .DS_Store
-echo Thumbs.db
-) > .gitignore
+@"
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Only ignore node_modules inside frontend, not frontend itself
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.next/
+
+# Only ignore Python cache, not backend itself
+backend/__pycache__/
+backend/.Python
+backend/venv/
+backend/env/
+backend/*.egg-info/
+backend/dist/
+backend/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+"@ | Out-File -Encoding UTF8 .gitignore
